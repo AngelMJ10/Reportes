@@ -1,7 +1,7 @@
 <?php
 
 // Librería obtenidas COMPOSER
-require '../vendor/autoload.php';
+require '../../vendor/autoload.php';
 
 // Namespaces (espacios de nombres/contenedor de clase)
 use Spipu\Html2Pdf\Html2Pdf;
@@ -15,7 +15,7 @@ try {
 
   // Iniciamos la creación del binario
   ob_start();
-  include './estilos.html';
+  include '../estilos.html';
   include './reporte1.datos.php';
 
   // Cierre creación de binario

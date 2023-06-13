@@ -81,6 +81,7 @@
     document.addEventListener("DOMContentLoaded", () => {
       
       const selectCasas = document.querySelector("#casas");
+      const btnGenerar = document.querySelector("#generarpdf")
       const table = document.querySelector("#tabla-superhero")
       const body = table.querySelector("tbody");
 
@@ -113,6 +114,7 @@
           .then(datos => {
             console.log(datos);
             table.innerHTML= ``;
+            const i = 1;
             datos.forEach(element => {
               const tableRow = `
                 <tr>
@@ -124,14 +126,25 @@
                   <td>${element.skin_colour}</td>
                 </tr>
               `;
+              
               table.innerHTML += tableRow;
             });
           })
       }
 
-      
+      function PDFBuild(){
+        const idcasa = parseInt(selectCasas.value);
+        if (idcasa > 0) {
+          const parametros = new URLSearchParams();
+          parametros.append("publisher_id", idcasa);
+          parametros.append("titulo", selectCasas.options[selectCasas.selectedIndex].text)
+          window.open(`../reports/heropublisher/reporte.php?${parametros}`, '_blank');
+        }
+        // window.location.href = '../reports/heropublisher/reporte.php?publisher_id='+ selectCasas.value;
+      }
 
       selectCasas.addEventListener("change", getByPublisher);
+      btnGenerar.addEventListener("click", PDFBuild);
       // Cuando el documento esté cargado
       getPublisher();
 
