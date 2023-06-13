@@ -20,5 +20,19 @@ class SuperHero extends Conexion{
     }
   }
 
+  public function listBadOrGood($data = []){
+    try {
+      $query ="CALL spu_bad_or_good_superhero(?,?)";
+      $consulta = $this->conexion->prepare($query);
+      $consulta->execute(array(
+        $data['publisher_id'],
+        $data['alignment_id']
+        ));
+      return $consulta->fetchAll(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+      die($e->getMesage());
+    }
+  }
+
 
 }
