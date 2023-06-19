@@ -20,6 +20,10 @@ if (isset($_GET['operacion'])) {
     )
   );
   }
+
+  if ($_GET['operacion'] == 'listarRace') {
+    renderJSON($superhero->listByRace(["race_id" => $_GET['race_id']]));
+  }
 }
 
 ?>
