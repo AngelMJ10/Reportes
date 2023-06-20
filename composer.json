@@ -1,5 +1,15 @@
 {
-    "require": {
-        "spipu/html2pdf": "^5.2"
-    }
+    "name": "user/heroes",
+    "autoload": {
+        "psr-4": {
+            "User\\Heroes\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AngelMJ10",
+            "email": "angelitomasna200410@gmail.com"
+        }
+    ],
+    "require": {}
 }

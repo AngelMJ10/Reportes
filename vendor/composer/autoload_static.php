@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInitc11ada5623a3ae3add9fb612787f202c
 {
     public static $prefixLengthsPsr4 = array (
+        'U' => 
+        array (
+            'User\\Heroes\\' => 12,
+        ),
         'S' => 
         array (
             'Spipu\\Html2Pdf\\' => 15,
@@ -14,6 +18,10 @@ class ComposerStaticInitc11ada5623a3ae3add9fb612787f202c
     );
 
     public static $prefixDirsPsr4 = array (
+        'User\\Heroes\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'Spipu\\Html2Pdf\\' => 
         array (
             0 => __DIR__ . '/..' . '/spipu/html2pdf/src',
